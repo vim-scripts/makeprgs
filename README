@@ -1,0 +1,15 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2031
+
+If you work on several different projects, chances are you will come across Makefile, Ant or SCons based build systems. If you have <F5> mapped to :make with ":nmap <F5> :make<CR>" then it would be nice if the correct build program were used. That is the purpose of this script. It also maps <F5> as mentioned.
+
+The script checks if the file SConstruct or SConscript is in the current directory and if so sets the makeprg to scons, or scons -u for scripts.
+
+If GNUmakefile, makefile or Makefile are found in the current directory, then the makeprg value is set to make.
+
+If build.xml is found, then "ant" is the assumed compiler - i.e. ":compiler ant" is called.
+
+A global variable makeprgs_make_types can be set to extend the functionality somewhat. Example included in the doc/*.txt file.
+
+The file detection is pretty crude - it runs a glob in the CWD and if the files are found sets the appropriate value. I hope you find it useful.
+
+Tested on Vim 7.0 and 7.1, but should work on earlier releases (6.0 at least).
