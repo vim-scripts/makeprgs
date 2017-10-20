@@ -15,7 +15,8 @@ let s:make_types = [
       \ { 'glob': ['SConscript', 'sconscript'], 'makeprg': 'scons -u' },
       \ { 'glob': 'build.xml', 'compiler': 'ant' },
       \ { 'glob': ['makefile', 'Makefile', 'GNUmakefile'], 'makeprg': 'make' },
-      \ { 'glob': '*.java', 'compiler': 'javac', 'makeprg' : 'javac %' }
+      \ { 'glob': '*.java', 'compiler': 'javac', 'makeprg' : 'javac %' },
+      \ { 'glob': 'jni/Android.mk', 'makeprg' : 'ndk-build' },
       \ ]
 
 if exists("makeprgs_make_types")
